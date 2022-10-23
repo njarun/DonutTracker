@@ -58,4 +58,8 @@
         android:id="@+id/coffeeGraph"
         app:moduleName="coffee"
         app:graphResName="coffee_graph"/>
+    <include-dynamic
+        android:id="@+id/bubbleTeaGraph"
+        app:moduleName="bubble_tea"
+        app:graphResName="bubble_tea_graph"/>
 </navigation>

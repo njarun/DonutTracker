@@ -61,7 +61,7 @@ android {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
 
-    dynamicFeatures = [':coffee']
+    dynamicFeatures = [':coffee',':bubble_tea']
 
 }
 

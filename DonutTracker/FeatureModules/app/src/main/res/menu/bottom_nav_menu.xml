@@ -7,4 +7,8 @@
         android:id="@id/coffeeGraph"
         android:icon="@drawable/coffee_cup"
         android:title="@string/coffee_name" />
+    <item
+        android:id="@id/bubbleTeaGraph"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/bubble_tea_name" />
 </menu>

@@ -19,18 +19,21 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.android.samples.donuttracker.core.model.BubbleTea
 import com.android.samples.donuttracker.core.model.Coffee
 import com.android.samples.donuttracker.core.model.Donut
 
 /**
  * The underlying database where information about the donuts is stored.
  */
-@Database(entities = arrayOf(Donut::class, Coffee::class), version = 1)
+@Database(entities = arrayOf(Donut::class, Coffee::class, BubbleTea::class), version = 2)
 abstract class SnackDatabase : RoomDatabase() {
 
     abstract fun donutDao(): DonutDao
 
     abstract fun coffeeDao(): CoffeeDao
+
+    abstract fun bubbleTeaDao(): BubbleTeaDao
 
     companion object {
         @Volatile private var INSTANCE: SnackDatabase? = null
@@ -45,7 +48,7 @@ abstract class SnackDatabase : RoomDatabase() {
                     context,
                     SnackDatabase::class.java,
                     "snack_database"
-                ).build()
+                ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 return instance
             }
